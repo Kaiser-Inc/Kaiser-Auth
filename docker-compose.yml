@@ -1,0 +1,29 @@
+services:
+  KaiserIncUsers:
+    image: bitnami/postgresql:latest
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRESQL_USERNAME=docker
+      - POSTGRESQL_PASSWORD=docker
+      - POSTGRESQL_DATABASE=KaiserIncUsers
+    volumes:
+      - KaiserIncUsers:/var/lib/postgresql/data
+      
+  app:
+      build: .
+      ports:
+        - '3333:3333'
+        - '5555:5555'
+      depends_on:
+        - KaiserIncUsers
+      environment:
+        - DATABASE_URL=postgresql://docker:docker@KaiserIncUsers:5432/KaiserIncUsers
+        - NODE_ENV=dev
+        - PORT=3333
+      volumes:
+        - .:/app
+        - /app/node_modules
+
+volumes:
+  KaiserIncUsers:
