@@ -21,6 +21,7 @@ services:
         - DATABASE_URL=postgresql://docker:docker@KaiserIncUsers:5432/KaiserIncUsers
         - NODE_ENV=dev
         - PORT=3333
+        - JWT_SECRET=kaiserInc
       volumes:
         - .:/app
         - /app/node_modules
