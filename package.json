@@ -31,6 +31,7 @@
     "vitest": "3.1.1"
   },
   "dependencies": {
+    "@fastify/cookie": "11.0.2",
     "@fastify/jwt": "9.1.0",
     "@prisma/client": "6.6.0",
     "bcryptjs": "3.0.2",
@@ -39,5 +40,5 @@
     "fastify": "5.2.2",
     "zod": "3.24.2"
   },
-  "packageManager": "pnpm@10.8.0+sha512.0e82714d1b5b43c74610193cb20734897c1d00de89d0e18420aebc5977fa13d780a9cb05734624e81ebd81cc876cd464794850641c48b9544326b5622ca29971"
+  "packageManager": "pnpm@10.10.0"
 }
